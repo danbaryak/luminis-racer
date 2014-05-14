@@ -1,0 +1,127 @@
+
+@font-face
+{
+    font-family: digi;
+    src: url(../fonts/ds_digital/DS-DIGIB.TTF);
+}
+
+body {
+    font-family: digi;
+    background: url(../images/cloud.jpg);
+
+    text-align: center;
+    padding-top: 0px;
+}
+h3 {
+    font-size: 28px;
+}
+.title {
+    background: rgb(122,188,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,188,255,1)), color-stop(44%,rgba(96,171,248,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+
+    border-top: 1px solid #11183a;
+    border-bottom: 1px solid #11183a;
+}
+.game-over {
+    color: black;
+    font-size: 60px;
+    -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+h2 {
+    font-family: digi;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    color: #41e9ff;
+}
+
+.center {
+    display:table-cell;
+    vertical-align:middle;
+    float:none;
+}
+
+.section {
+    display: none;
+    vertical-align: middle;
+}
+
+#waitMessage {
+    font-size: 30px;
+    color: white;
+    background: red;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+input[type=text] {
+    font-family: digi;
+    background: white;
+    border: 1px solid grey;
+    padding: 5px;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+#carColor {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.join-game {
+    text-align: center;
+    align-content: center;
+}
+
+.wait-for-game > h3 {
+    text-align: center;
+}
+
+.message {
+    animation-delay:1s;
+    -webkit-animation-delay:1s; /* Safari and Chrome */
+    font-size: 18px;
+    color: white;
+    background: rgba(71, 107, 255, 0.5);
+}
+
+#results {
+    text-align: center;
+    align-content: center;
+    color: white;
+
+}
+
+.table-headers {
+    color: yellow;
+}
+
+.results-table {
+
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+td, th {
+    margin: 10px !important;
+    padding: 10px !important;
+}
+
+.table-content {
+
+    color: white;
+}
+
