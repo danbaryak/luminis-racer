@@ -10,6 +10,8 @@ The race track is bulit out of 4 closed paths, defined in the *track.json* file:
 * 'Inner Grass': Path defining the grass 'island' inside the track
 * 'Pavement'    : Path defining the inner 'wall' inside the inner grass
 
+![ScreenShot](https://raw.github.com/danbaryak/luminis-racer/master/screenshots/track.png)
+
 To make it easier creating the track, I've written a small track editor program to generate the JSON data from paths you can draw on screen.
 
 
