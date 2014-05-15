@@ -65,7 +65,6 @@ public class GameWorld implements Runnable {
             throw new IllegalStateException("Game stat is not WAITING, cannot join");
         }
 
-        // TODO: limit to n players, make sure enough colors in enum for all players
 
         playerCount++;
         Player player = new Player(playerCount, playerName);
@@ -73,7 +72,9 @@ public class GameWorld implements Runnable {
 
         // set initial player position
         PlayerState state = player.getState();
-        state.setPosition(400, 40 + player.getId() * 25);
+
+        state.setPosition(400 - ((player.getId() - 1)/ 3) * 28, 60 + ((player.getId() - 1) % 3) * 28);
+
         state.setName(player.getName());
         state.setId(player.getId());
 
@@ -98,7 +99,7 @@ public class GameWorld implements Runnable {
 
     /**
      * Fills the game state to be sent to the client.
-     * 
+     *
      * @param state The state to fill.
      */
     public synchronized void fillGameState(GameState state) {
@@ -148,77 +149,88 @@ public class GameWorld implements Runnable {
             }
 
             long timeInMs = System.currentTimeMillis() - gameStartTime;
-            long timeInSeconds = timeInMs / 1000;
-            long timeInMinutes = timeInSeconds / 60;
-//        logger.info("Current time in seconds: " + timeInSeconds);
+
             if (status == GameStatus.WAITING) {
-                gameTime = -10000 + timeInMs;
-                if (gameTime >= 0) {
-                    status = GameStatus.IN_PROGRESS;
-                    gameStartTime = System.currentTimeMillis();
-                    gameTime = 0;
-                }
+                handleWaitingState(timeInMs);
             } else if (status == GameStatus.IN_PROGRESS) {
-                gameTime = timeInMs;
-
-                // process key events every configured interval
-                if (gameTime - lastKeyUpdate > KEY_UPDATE_INTERVAL) {
-
-                    lastKeyUpdate = gameTime;
-                    for (Player player : players.values()) {
-                        if (player.isFinished()) {
-                            continue;
-                        }
-                        PlayerCommand command = commands.get(player.getId());
-                        if (command != null) {
-                            player.processPlayerCommand(command);
-                        }
-                    }
-                    commands.clear();
-                }
-
-
-
-                // update car positions
-                if (gameTime - lastPosUpdate > POSITION_UPDATE_INTERVAL) {
-                    lastPosUpdate = gameTime;
-                    int stillAlive = 0;
-                    boolean someoneHasFinished = false;
-                    for (Player player : players.values()) {
-                        if (player.isFinished()) {
-                            someoneHasFinished = true;
-                            continue;
-                        }
-                        player.updatePosition(gameTime);
-                        if (! player.isCrashed()) {
-                            stillAlive++;
-                        }
-                    }
-                    if (stillAlive == 0 || timeInMinutes >= MAX_GAME_TIME_MINUTES
-                            || (someoneHasFinished && timeInMinutes >= MAX_GAME_TIME_AFTER_WIN_MINUTES)) {
-
-                        // end the game and store results
-                        for (Player p : players.values()) {
-                            long finishTime = p.getState().getFinishTime();
-                            if (finishTime > 0) {
-                                resultStorage.storeResult(new GameResult(p.getName(), finishTime));
-                            }
-                        }
-
-                        setStatus(GameStatus.DONE);
-                        gameStartTime = System.currentTimeMillis();
-
-                    }
-                }
+                handleGameInProgress(timeInMs);
             } else if (status == GameStatus.DONE) {
-                if (timeInSeconds >= DISPLAY_RESULTS_TIME_SEC) {
-                    logger.info("Starting a new game");
-                    setStatus(GameStatus.WAITING);
-                    initState();
-                }
+                handleDoneState(timeInMs);
             }
         } catch (Exception exc) {
             logger.error("Error caught during game loop " + exc);
+        }
+    }
+
+    private void handleDoneState(long timeInMs) {
+        long timeInSeconds = timeInMs / 1000;
+        if (timeInSeconds >= DISPLAY_RESULTS_TIME_SEC) {
+            logger.info("Starting a new game");
+            setStatus(GameStatus.WAITING);
+            initState();
+        }
+    }
+
+    private void handleGameInProgress(long timeInMs) {
+        gameTime = timeInMs;
+        long timeInSeconds = timeInMs / 1000;
+        long timeInMinutes = timeInSeconds / 60;
+        // process key events every configured interval
+        if (gameTime - lastKeyUpdate > KEY_UPDATE_INTERVAL) {
+
+            lastKeyUpdate = gameTime;
+            for (Player player : players.values()) {
+                if (player.isFinished()) {
+                    continue;
+                }
+                PlayerCommand command = commands.get(player.getId());
+                if (command != null) {
+                    player.processPlayerCommand(command);
+                }
+            }
+            commands.clear();
+        }
+
+
+        // update car positions
+        if (gameTime - lastPosUpdate > POSITION_UPDATE_INTERVAL) {
+            lastPosUpdate = gameTime;
+            int stillAlive = 0;
+            boolean someoneHasFinished = false;
+            for (Player player : players.values()) {
+                if (player.isFinished()) {
+                    someoneHasFinished = true;
+                    continue;
+                }
+                player.updatePosition(gameTime);
+                if (! player.isCrashed()) {
+                    stillAlive++;
+                }
+            }
+            if (stillAlive == 0 || timeInMinutes >= MAX_GAME_TIME_MINUTES
+                    || (someoneHasFinished && timeInMinutes >= MAX_GAME_TIME_AFTER_WIN_MINUTES)) {
+
+                // end the game and store results
+                for (Player p : players.values()) {
+                    long finishTime = p.getState().getFinishTime();
+                    if (finishTime > 0) {
+                        resultStorage.storeResult(new GameResult(p.getName(), finishTime));
+                    }
+                }
+
+                setStatus(GameStatus.DONE);
+                gameStartTime = System.currentTimeMillis();
+
+            }
+        }
+    }
+
+    private void handleWaitingState(long timeInMs) {
+        gameTime = -10000 + timeInMs;
+        if (gameTime >= 0) {
+            status = GameStatus.IN_PROGRESS;
+            gameStartTime = System.currentTimeMillis();
+            gameTime = 0;
         }
     }
 

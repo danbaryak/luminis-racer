@@ -1,7 +1,7 @@
 package com.danbar.luminis.data;
 
 /**
- * Created by danbar-yaakov on 5/3/14.
+ * Just a point.
  */
 public class Point {
 

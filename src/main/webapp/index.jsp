@@ -10,12 +10,14 @@
     <script type="text/paperscript" src="static/js/main.js" canvas="gameCanvas"></script>
 <body>
 <div class="title animated bounceInDown">
-    <h2>SKY RACER</h2>
+    <h2>RACER</h2>
 </div>
 
 
 <div id="join" class="section container center join-game">
-    <h3>Join the next game!</h3>
+    <div class="dark-bg">
+        <h3>Join the next game!</h3>
+    </div>
     <div>
         <input id="txtPlayerName" type="text" placeholder="Enter your name">
         <button class="btn btn-primary btn-lg" id="btnJoin">Join Game</button>
@@ -23,7 +25,9 @@
 </div>
 
 <div id="wait" class="section container center wait-for-game">
-    <h3>Waiting for game to start</h3>
+    <div class="dark-bg">
+        <h3>Waiting for game to start</h3>
+    </div>
 
     <div id="waitMessage">
 
@@ -45,8 +49,12 @@
 </div>
 
 <div id="results" class="section container">
-    <h3 class="game-over">GAME OVER</h3>
-    <h2 id="resultMessage"></h2>
+    <div class="dark-bg">
+        <h3 class="game-over">GAME OVER</h3>
+        <h2 id="resultMessage"></h2>
+
+    </div>
+
     <div class="text-center">
         <table id="resultsTable" class="results-table"></table>
     </div>

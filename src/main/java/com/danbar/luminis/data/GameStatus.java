@@ -1,7 +1,7 @@
 package com.danbar.luminis.data;
 
 /**
- * Created by danbar-yaakov on 5/3/14.
+ * Game status.
  */
 public enum GameStatus {
 

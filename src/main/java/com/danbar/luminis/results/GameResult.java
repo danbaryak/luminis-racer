@@ -3,7 +3,7 @@ package com.danbar.luminis.results;
 import java.util.Date;
 
 /**
- * Created by danbar-yaakov on 5/13/14.
+ * Game result passed to persistent storage.
  */
 public class GameResult {
 

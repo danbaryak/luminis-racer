@@ -1,7 +1,7 @@
 package com.danbar.luminis.data;
 
 /**
- * Created by danbar-yaakov on 5/8/14.
+ * Represents the steering wheel direction.
  */
 public enum SteeringWheel {
 

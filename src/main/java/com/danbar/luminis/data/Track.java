@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by danbar-yaakov on 5/3/14.
+ * The racing track, loaded from JSON file.
  */
 public class Track {
 

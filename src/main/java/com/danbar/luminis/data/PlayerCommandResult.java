@@ -1,7 +1,7 @@
 package com.danbar.luminis.data;
 
 /**
- * Created by danbar-yaakov on 5/9/14.
+ * Result returned to the client as a result of a key press that is sent to the server.
  */
 public class PlayerCommandResult {
     private boolean accepted;
@@ -10,6 +10,12 @@ public class PlayerCommandResult {
 
     }
 
+    /**
+     * Creates the result.
+     *
+     * @param accepted Indicates that the server has accepted the key press (no previous command is waiting
+     *                 to be processed)
+     */
     public PlayerCommandResult(boolean accepted) {
         this.accepted = accepted;
     }

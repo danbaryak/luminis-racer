@@ -27,6 +27,14 @@ public class GameController  {
 
     }
 
+    /**
+     * Called by the client when a key is pressed by the user.
+     *
+     * @param command The command to handle.
+     * @param playerId The player ID
+     *
+     * @return a result indicating if the server processed the command or not.
+     */
     @RequestMapping("command")
     @ResponseBody
     public PlayerCommandResult handlePlayerCommand(@RequestParam("name") String command, @RequestParam("id") int playerId) {

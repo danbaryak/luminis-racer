@@ -24,7 +24,8 @@ var playerNextPositions =  {};
 var player = null;
 var carColor = null;
 
-var CAR_COLORS = ['purple', 'red', 'blue', 'yellow', 'orange', 'pink'];
+var CAR_COLORS = ['black', '#C40606', '#0B4DBF', '#D4BC0B', '#E07A04', '#BB06C4', '#025247'];
+var CAR_COLOR_NAMES = ['black', 'red', 'blue', 'yellow', 'orange', 'purple', 'cyan'];
 var canvas;
 var game = null;
 
@@ -224,7 +225,7 @@ function showResults() {
     $("#resultsTable").html('<tr class="table-headers"><td>  Place  </td><td>  Name  </td><td>  Finish Time  </td></tr>');
     for (var i in allPlayers) {
         var p = allPlayers[i];
-        var position = eval(i + 1);
+        var position = p.crashed ? "-" : parseInt(i, 10) + 1;
         var time = secondsToTime(p.finishTime / 1000);
         var timeStr = time.m + ":" + time.s;
         var finishStr = p.finishTime != 0 ?  timeStr : p.crashed ? "<span style=\"color:red\">CRASHED</span>" : "<span style=\"color:red\">DIDN'T FINISH</span>";
@@ -261,6 +262,7 @@ function createTrack(track) {
         innerGrass: new Path(),
         pavement: new Path()
     };
+
     trackPaths.outerGrass = new CompoundPath(createTrackPath(track.outerGrass), createTrackPath(track.pavement));
     trackPaths.outerGrass.fillColor = '#45DE31';
     trackPaths.outerGrass.strokeWidth = 2;
@@ -273,6 +275,18 @@ function createTrack(track) {
     trackPaths.innerGrass.fillColor = '#45DE31';
     trackPaths.innerGrass.strokeColor = '#2C8A32';
     trackPaths.innerGrass.strokeWidth = 2;
+
+    // create start / finish line
+    var lineX = 410 ;
+    var lineHeight = 200;
+    var line = new Path();
+    line.moveTo(lineX, trackPaths.track.bounds.y + 2);
+    line.lineTo(lineX, trackPaths.innerGrass.bounds.y - 2);
+
+
+    line.strokeWidth = 3;
+    line.strokeColor = 'orange';
+    line.dashArray = [8, 4];
 }
 
 function createPlayers(data) {
@@ -439,7 +453,7 @@ function joinGame() {
         $("#btnJoin").prop("disabled",true);
         player = p;
         carColor = CAR_COLORS[p.id];
-        $("#carColor").html("<span style=\"background: " + carColor + "\">Your color is " + carColor + "</span>");
+        $("#carColor").html("<span class=\"color-label\" style=\"background: " + carColor + "\">Your color is " + CAR_COLOR_NAMES[p.id] + "</span>");
         console.log("My car color is " + carColor);
     });
 }

@@ -1,7 +1,7 @@
 package com.danbar.luminis.data;
 
 /**
- * Created by danbar-yaakov on 5/6/14.
+ * Player state, passed to the client upon request.
  */
 public class PlayerState {
     private double x;

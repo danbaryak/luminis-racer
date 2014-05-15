@@ -1,14 +1,16 @@
 package com.danbar.luminis.data;
 
+import com.danbar.luminis.GameConstants;
+import com.danbar.luminis.GameController;
 import org.apache.log4j.Logger;
 
 /**
- * Created by danbar-yaakov on 5/3/14.
+ * Represents a game player.
  */
 public class Player {
 
     private static final Logger logger = Logger.getLogger(Player.class);
-    public static final double ANGLE_UNIT = Math.PI / 25;
+    public static final double ANGLE_UNIT = Math.PI / 30;
     public static final double DISTANCE_UNIT = 5.0;
 
     /* The car steering state at a given time */
@@ -22,6 +24,7 @@ public class Player {
 
     private Track track;
 
+    /* The car heading at a given time */
     private double heading = 0;
 
     private int quadrantsPassed = 0;
@@ -33,7 +36,7 @@ public class Player {
     }
 
     private int id;
-    private CarColor carColor;
+
     private String name;
     private PlayerState state = new PlayerState();
 
@@ -51,14 +54,6 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public CarColor getCarColor() {
-        return carColor;
-    }
-
-    public void setCarColor(CarColor carColor) {
-        this.carColor = carColor;
     }
 
     public PlayerState getState() {
@@ -89,8 +84,10 @@ public class Player {
         double x = state.getX();
         double y = state.getY();
         if (speed != Speed.STOPPED) {
-
-            double distance = speed.ordinal() * DISTANCE_UNIT * (trackSection == TrackSection.GRASS ? .5 : 1);
+            double distance = DISTANCE_UNIT;
+            if (trackSection == TrackSection.ROAD) {
+                distance *= speed.ordinal();
+            }
             heading = heading + steering.getAngle();
             double dx = Math.cos(heading) * distance;
             double dy = Math.sin(heading) * distance;
@@ -110,8 +107,8 @@ public class Player {
         }
         currentQuadrant = quadrant;
 
-//        logger.info("Player " + id + " is in quadrant " + currentQuadrant + ". Number of quadrants passed = " + quadrantsPassed);
-        if (quadrantsPassed == 4) {
+
+        if (quadrantsPassed == 4 * GameConstants.NUMBER_OF_LAPS) {
             // finished track
             state.setFinished(true);
             state.setFinishTime(gameTime);
@@ -128,16 +125,6 @@ public class Player {
     public void setTrack(Track track) {
         this.track = track;
     }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "id=" + id +
-                ", carColor='" + carColor + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
 
     public boolean isCrashed() {
         return state.isCrashed();

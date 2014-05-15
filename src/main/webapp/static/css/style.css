@@ -7,6 +7,7 @@
 
 body {
     font-family: digi;
+
     background: url(../images/rocks.png);
     background-size: 130px;
     background-repeat: repeat;
@@ -41,8 +42,9 @@ h2 {
     font-family: digi;
     font-weight: bold;
     text-align: center;
-    font-size: 40px;
-    color: #1d530e;
+    font-size: 45px;
+
+    color: #00ae00;
 }
 
 .center {
@@ -59,11 +61,27 @@ h2 {
 #waitMessage {
     font-size: 30px;
     color: white;
-    background: red;
+    background: rgba(140, 0, 0, 0.50);
     padding: 10px;
-    border: 1px solid white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
-
+.color-label {
+    padding: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.dark-bg {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    color: white;
+    margin: 5px;
+}
 input[type=text] {
     font-family: digi;
     background: white;
@@ -100,7 +118,7 @@ input[type=text] {
     text-align: center;
     align-content: center;
     color: white;
-
+    margin: 0 auto;
 }
 
 .table-headers {

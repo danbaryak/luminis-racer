@@ -3,7 +3,7 @@ package com.danbar.luminis.results.mongo;
 import java.util.Date;
 
 /**
- * Created by danbar-yaakov on 5/13/14.
+ * Game result to be stored in MongoDB.
  */
 public class MongoGameResult {
 
