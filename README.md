@@ -6,7 +6,7 @@ Implementation of a client-server 'real time' Racing game.
 <h4>Installation Instructions</h4>
 * Checkout the code
 * run **mvn installl**
-* run mongodb with the default port
+* run mongodb with the default port (27017)
 * deploy the generated war file to Tomcat 8 or any other app container supporting Java 8
 * direct your browser to your server at port 8080
 
@@ -48,6 +48,7 @@ The car is a little difficult to handle at first and it takes some practice, esp
 * Java 8 
 * Tomcat 8 web application container
 * Spring MVC 3 
+* Mongo DB (with Spring MongoTemplate) - for persisting game results
 
 **Client**
 
