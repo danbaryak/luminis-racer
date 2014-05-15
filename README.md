@@ -3,17 +3,7 @@ luminis-racer
 
 Implementation of a client-server 'real time' Racing game.
 
-
-```java
-
-  void someFunction(String str) {
-    if (this == that) {
-      return;
-    }
-  }
-
-```
-The technologies used:
+<h4>Technologies used:</h4>
 
 <strong>Server</strong>
 
