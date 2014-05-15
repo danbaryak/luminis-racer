@@ -3,7 +3,14 @@ luminis-racer
 
 Implementation of a client-server 'real time' Racing game.
 
+<h5>The race track</h5>
+The race track is bulit out of 4 closed paths, defined in the *track.json* file:
+* 'Outer Grass': Path defining the outer grass section
+* 'Track       : Path defining the actual race track (the road)
+* 'Inner Grass': Path defining the grass 'island' inside the track
+* 'Pavement'    : Path defining the inner 'wall' inside the inner grass
 
+To make it easier creating the track, I've written a small track editor program to generate the JSON data from paths you can draw on screen.
 
 <h5>Playing the game</h5>
 
@@ -24,13 +31,13 @@ The car is a little difficult to handle at first and it takes some practice, esp
 
 <h5>Technologies used:</h5>
 
-<strong>Server</strong>
+**Server**
 
 * Java 8 
 * Tomcat 8 web application container
 * Spring MVC 3 
 
-<strong>Client</strong>
+**Client**
 
 * HTML5 & CSS3
 * JQuery
