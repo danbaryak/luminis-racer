@@ -37,7 +37,7 @@ command once every configured time interval (initialized to 1 second).
 
 The car is a little difficult to handle at first and it takes some practice, especially if there is a large communication delay between the client and server. I've improved it to some extent by using client side 'predication', guessing where the car will be after the server processes the key command (only if the server accepts the command, meaning that there are no previous keystroke that should be handled)
 
-<h5>Technologies used:</h5>
+<h4>Technologies used:</h4>
 
 **Server**
 
