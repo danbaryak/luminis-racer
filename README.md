@@ -5,11 +5,12 @@ Implementation of a client-server 'real time' Racing game.
 
 The user can control the car using the keyboard arrow keys as follows:
 
+
 Key             | Functionality
 --------------- | -------------------------------------------------------------------
 Up Arrow        | Increases the car speed (from STOPPED to SLOW or from SLOW to FAST)
 Down Arrow      | Decreases the car speed (from FAST to SLOW or from SLOW to STOPPED)
-
+Right Arrow     | Change steering to the right (from STRAIGHT to RIGHT or from LEFT to STRAIGHT)
   
 
 <h4>Technologies used:</h4>
