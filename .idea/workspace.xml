@@ -26,8 +26,8 @@
       <file leaf-file-name="GameWorld.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24088748" vertical-offset="448" max-vertical-offset="3630">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.24088748" vertical-offset="463" max-vertical-offset="3690">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -769,12 +769,12 @@
       <workItem from="1400001786766" duration="12309000" />
       <workItem from="1400046188897" duration="204000" />
       <workItem from="1400091067966" duration="367000" />
-      <workItem from="1400174762563" duration="330000" />
+      <workItem from="1400174762563" duration="379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101902000" />
+    <option name="totallyTimeSpent" value="101951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
@@ -863,7 +863,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameWorld.java</url>
-          <line>219</line>
+          <line>224</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
@@ -1242,8 +1242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24088748" vertical-offset="448" max-vertical-offset="3630">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.24088748" vertical-offset="463" max-vertical-offset="3690">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
