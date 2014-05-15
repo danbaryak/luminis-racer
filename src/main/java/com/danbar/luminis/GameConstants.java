@@ -16,5 +16,5 @@ public class GameConstants {
     /* Game results will be displayed for this amount of seconds before continuing to the next game */
     public static final int DISPLAY_RESULTS_TIME_SEC = 30;
     /* The number of laps a user has to complete */
-    public static final int NUMBER_OF_LAPS = 2;
+    public static final int NUMBER_OF_LAPS = 3;
 }

@@ -88,8 +88,8 @@
       <file leaf-file-name="GameConstants.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.778098" vertical-offset="30" max-vertical-offset="390">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5619597" vertical-offset="30" max-vertical-offset="390">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -194,8 +194,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/results/GameResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameWorld.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/data/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameConstants.java" />
       </list>
     </option>
   </component>
@@ -959,12 +959,12 @@
       <workItem from="1400001786766" duration="12309000" />
       <workItem from="1400046188897" duration="204000" />
       <workItem from="1400091067966" duration="367000" />
-      <workItem from="1400174762563" duration="10395000" />
+      <workItem from="1400174762563" duration="10999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111967000" />
+    <option name="totallyTimeSpent" value="112571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
@@ -1457,8 +1457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danbar/luminis/GameConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.778098" vertical-offset="30" max-vertical-offset="390">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5619597" vertical-offset="30" max-vertical-offset="390">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding />
         </state>
       </provider>
