@@ -10,7 +10,7 @@ Implementation of a client-server 'real time' Racing game.
 * deploy the generated war file to Tomcat 8 or any other app container supporting Java 8
 * direct your browser to your server at port 8080
 
-<h5>The race track</h5>
+<h4>The Game</h4>
 The race track is bulit out of 4 closed paths, defined in the *track.json* file:
 * 'Outer Grass': Path defining the outer grass section
 * 'Track       : Path defining the actual race track (the road)
@@ -22,9 +22,6 @@ I've implemented simple collision detection by checking if the center of the car
 ![ScreenShot](https://raw.github.com/danbaryak/luminis-racer/master/screenshots/track.png)
 
 To make it easier creating the track, I've written a small track editor program to generate the JSON data from paths you can draw on screen.
-
-
-<h5>Playing the game</h5>
 
 The user can control the car using the keyboard arrow keys as follows:
 
@@ -39,7 +36,6 @@ When the user presses a key, the client sends it to the server side. The server 
 command once every configured time interval (initialized to 1 second).
 
 The car is a little difficult to handle at first and it takes some practice, especially if there is a large communication delay between the client and server. I've improved it to some extent by using client side 'predication', guessing where the car will be after the server processes the key command (only if the server accepts the command, meaning that there are no previous keystroke that should be handled)
-
 
 <h5>Technologies used:</h5>
 
