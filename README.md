@@ -3,12 +3,21 @@ luminis-racer
 
 Implementation of a client-server 'real time' Racing game.
 
+<h4>Installation Instructions</h4>
+* Checkout the code
+* run **mvn installl**
+* run mongodb with the default port
+* deploy the generated war file to Tomcat 8 or any other app container supporting Java 8
+* direct your browser to your server at port 8080
+
 <h5>The race track</h5>
 The race track is bulit out of 4 closed paths, defined in the *track.json* file:
 * 'Outer Grass': Path defining the outer grass section
 * 'Track       : Path defining the actual race track (the road)
 * 'Inner Grass': Path defining the grass 'island' inside the track
 * 'Pavement'    : Path defining the inner 'wall' inside the inner grass
+
+I've implemented simple collision detection by checking if the center of the car is located inside the relevant path.
 
 ![ScreenShot](https://raw.github.com/danbaryak/luminis-racer/master/screenshots/track.png)
 
