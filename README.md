@@ -12,7 +12,6 @@ The race track is bulit out of 4 closed paths, defined in the *track.json* file:
 
 To make it easier creating the track, I've written a small track editor program to generate the JSON data from paths you can draw on screen.
 
-![ScreenShot](http://flashgames555.com/pictures/racing/Racing-Track.jpg)
 
 <h5>Playing the game</h5>
 
