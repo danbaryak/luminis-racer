@@ -97,8 +97,9 @@ public class GameWorld implements Runnable {
     }
 
     /**
-     *
-     * @param state
+     * Fills the game state to be sent to the client.
+     * 
+     * @param state The state to fill.
      */
     public synchronized void fillGameState(GameState state) {
         state.setStatus(status);
@@ -221,6 +222,9 @@ public class GameWorld implements Runnable {
         }
     }
 
+    /**
+     * Initializes the game world state, preparing it for a new game. 
+     */
     private void initState() {
         this.players.clear();
         this.gameStartTime = 0;
