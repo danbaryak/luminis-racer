@@ -254,19 +254,6 @@ function initState() {
     carColor = null;
 }
 
-function draw() {
-    canvas.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    if (game == null || game.status != 'IN_PROGRESS') {
-        return;
-    }
-    canvas.strokeStyle="#FF0000";
-    canvas.fillStyle = 'red';
-
-//    createTrack(game.track);
-
-
-}
-
 function createTrack(track) {
     trackPaths = {
         outerGrass: new Path(),
@@ -276,13 +263,16 @@ function createTrack(track) {
     };
     trackPaths.outerGrass = new CompoundPath(createTrackPath(track.outerGrass), createTrackPath(track.pavement));
     trackPaths.outerGrass.fillColor = '#45DE31';
+    trackPaths.outerGrass.strokeWidth = 2;
     trackPaths.outerGrass.strokeColor = '#2C8A32';
     trackPaths.track = new CompoundPath(createTrackPath(track.track), createTrackPath(track.pavement));
     trackPaths.track.fillColor = '#919191';
     trackPaths.track.strokeColor = '#2C8A32';
+    trackPaths.track.strokeWidth = 2;
     trackPaths.innerGrass = new CompoundPath(createTrackPath(track.innerGrass), createTrackPath(track.pavement));
     trackPaths.innerGrass.fillColor = '#45DE31';
     trackPaths.innerGrass.strokeColor = '#2C8A32';
+    trackPaths.innerGrass.strokeWidth = 2;
 }
 
 function createPlayers(data) {
